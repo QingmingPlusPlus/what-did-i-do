@@ -5,6 +5,7 @@
 | 路径/模块 | 先读 doc | 先读 spec | 触发 skill | 改后同步 | 状态 |
 | --- | --- | --- | --- | --- | --- |
 | `AGENTS.md`、`doc/agent-guide.md`、`doc/agent-memory-map.md`、`.agents/skills` | `doc/agent-guide.md`、`doc/agent-memory-map.md` | `<governance-spec>` | `cross-memory-routing` | 更新治理 spec、路由表或对应 skill | active |
+| `electron/`、`src/`、`package.json`、`README.md`、Git 日报 Agent | `doc/git-daily-report-agent.md` | `openspec/specs/git-daily-report-agent-ui/spec.md` | `cross-memory-routing` | 更新模块 doc、README、OpenSpec capability 或任务状态 | active |
 | `<module-path>` | `doc/<module-doc>.md` | `<spec-path>` | `<skill-name>` | 更新模块 doc/spec/skill | active |
 
 ## Fallback
