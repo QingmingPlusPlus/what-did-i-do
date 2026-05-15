@@ -1,13 +1,11 @@
 export type Project = {
   id: string;
   name: string;
+  path: string;
   selected: boolean;
-};
-
-export type Provider = {
-  id: string;
-  name: string;
-  models: string[];
+  valid: boolean;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type DateMode = "today" | "custom";
@@ -16,20 +14,6 @@ export type ReportState = {
   status: "idle" | "generating" | "generated";
   generatedAt: string;
 };
-
-export const mockProjects: Project[] = [
-  { id: "project-a", name: "project-a", selected: true },
-  { id: "project-b", name: "project-b", selected: true },
-  { id: "project-c", name: "project-c", selected: false },
-  { id: "project-d", name: "project-d", selected: false },
-  { id: "tools", name: "tools", selected: false },
-];
-
-export const mockProviders: Provider[] = [
-  { id: "openai", name: "OpenAI", models: ["gpt-4.1", "gpt-4.1-mini", "gpt-4o"] },
-  { id: "anthropic", name: "Anthropic", models: ["claude-sonnet-4", "claude-haiku-3.5"] },
-  { id: "local", name: "Local Mock", models: ["mock-large", "mock-fast"] },
-];
 
 export const defaultPrompt = `你是一位技术日报助手，请根据以下 Git 提交记录生成一份中文的工作日报。
 1. 聚焦今日的主要变化和工作成果
