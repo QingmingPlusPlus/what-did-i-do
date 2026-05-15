@@ -91,7 +91,9 @@ export default function Home() {
   const [startDate, setStartDate] = useState("2025-05-29");
   const [endDate, setEndDate] = useState("2025-05-29");
   const [prompt, setPrompt] = useState(DEFAULT_PROMPT);
-  const [reportStatus, setReportStatus] = useState<"generated" | "generating" | "idle">("generated");
+  const [reportStatus, setReportStatus] = useState<
+    "generated" | "generating" | "idle"
+  >("generated");
   const [reportContent, setReportContent] = useState(MOCK_REPORT);
   const [generatedAt] = useState("2025-05-29 11:35:42");
 
@@ -100,16 +102,13 @@ export default function Home() {
 
   const handleToggleProject = (id: string) => {
     setProjects((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, selected: !p.selected } : p))
+      prev.map((p) => (p.id === id ? { ...p, selected: !p.selected } : p)),
     );
   };
 
   const handleAddProject = (name: string, path: string) => {
     void path;
-    setProjects((prev) => [
-      ...prev,
-      { id: name, name, selected: true },
-    ]);
+    setProjects((prev) => [...prev, { id: name, name, selected: true }]);
   };
 
   const handleAddSupplier = (name: string, baseUrl: string, apiKey: string) => {
@@ -167,7 +166,7 @@ export default function Home() {
     <div className="flex h-screen flex-col bg-background">
       <Header />
       <main className="flex flex-1 gap-4 overflow-hidden p-4">
-        <div className="flex w-[520px] shrink-0 flex-col gap-4 overflow-y-auto pr-1">
+        <div className="flex w-130 shrink-0 flex-col gap-4 overflow-y-auto pr-1">
           <ProjectSection
             projects={projects}
             onToggleProject={handleToggleProject}
